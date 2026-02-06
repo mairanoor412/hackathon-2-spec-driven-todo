@@ -376,11 +376,11 @@ export default function DashboardPage() {
             <div className="h-4 w-48 bg-[#232326] rounded animate-pulse" />
           </div>
 
-          {/* Tabs skeleton */}
-          <div className="flex gap-2">
-            <div className="h-10 w-24 bg-[#232326] rounded animate-pulse" />
-            <div className="h-10 w-24 bg-[#232326] rounded animate-pulse" />
-            <div className="h-10 w-24 bg-[#232326] rounded animate-pulse" />
+          {/* Stats cards skeleton */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="h-28 glass-card rounded-xl animate-pulse" />
+            ))}
           </div>
 
           {/* Task cards skeleton */}
@@ -398,7 +398,7 @@ export default function DashboardPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-6 sm:py-8">
       {/* Error banner */}
       {error && (
-        <div className="mb-4 p-4 bg-red-900/20 border border-red-500/50 rounded-lg text-red-400">
+        <div className="mb-4 p-4 bg-red-900/20 border border-red-500/30 rounded-xl text-red-400 backdrop-blur-sm">
           {error}
           <button
             onClick={() => setError(null)}
@@ -419,36 +419,46 @@ export default function DashboardPage() {
         </p>
       </div>
 
-      {/* Tabs and Add button */}
-      <div className="flex flex-wrap items-center gap-4 mb-6">
-        <div className="flex gap-1 bg-[#141416] p-1 rounded-lg">
-          {[
-            { value: 'all' as const, label: `All (${stats.all})` },
-            { value: 'active' as const, label: `Active (${stats.active})` },
-            { value: 'completed' as const, label: `Completed (${stats.completed})` },
-          ].map((tab) => (
-            <button
-              key={tab.value}
-              onClick={() => setActiveTab(tab.value)}
-              className={`
-                px-4 py-2 text-sm font-medium rounded-md transition-colors
-                ${activeTab === tab.value
-                  ? 'bg-[#232326] text-[#fafafa]'
-                  : 'text-[#71717a] hover:text-[#fafafa]'
-                }
-              `}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
+      {/* Stats Metric Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+        {[
+          { value: 'all' as const, label: 'Total Tasks', count: stats.all, gradient: 'from-[#667eea] to-[#764ba2]' },
+          { value: 'active' as const, label: 'Active', count: stats.active, gradient: 'from-[#f093fb] to-[#f5576c]' },
+          { value: 'completed' as const, label: 'Completed', count: stats.completed, gradient: 'from-[#22c55e] to-[#10b981]' },
+        ].map((metric) => (
+          <button
+            key={metric.value}
+            onClick={() => setActiveTab(metric.value)}
+            className={`
+              group relative overflow-hidden
+              glass-card rounded-xl p-6 text-left
+              transition-all duration-300
+              hover:border-[#667eea]/40 hover:shadow-[0_8px_30px_rgba(102,126,234,0.15)] hover:translate-y-[-2px]
+              ${activeTab === metric.value
+                ? 'ring-2 ring-[#667eea]/60 shadow-lg shadow-[#667eea]/20'
+                : ''
+              }
+            `}
+          >
+            {activeTab === metric.value && (
+              <div className={`absolute inset-0 bg-gradient-to-br ${metric.gradient} opacity-10 rounded-xl`} />
+            )}
+            <div className="relative z-10">
+              <p className="text-sm font-medium text-[#a1a1aa] mb-1">{metric.label}</p>
+              <p className={`text-4xl font-bold bg-gradient-to-br ${metric.gradient} bg-clip-text text-transparent`}>
+                {metric.count}
+              </p>
+            </div>
+          </button>
+        ))}
+      </div>
 
-        <div className="ml-auto">
-          <Button onClick={() => { setEditingTask(null); setIsFormOpen(true) }}>
-            <Plus className="h-4 w-4 mr-2" />
-            Add Task
-          </Button>
-        </div>
+      {/* Add Task Button */}
+      <div className="flex justify-end mb-6">
+        <Button onClick={() => { setEditingTask(null); setIsFormOpen(true) }}>
+          <Plus className="h-4 w-4 mr-2" />
+          Add Task
+        </Button>
       </div>
 
       {/* Filter bar */}

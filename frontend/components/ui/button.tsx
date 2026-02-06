@@ -24,8 +24,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           'focus:ring-[#3b82f6] focus:ring-offset-[#0a0a0b]',
           'disabled:opacity-50 disabled:pointer-events-none',
           // Variant styles
-          variant === 'primary' && 'bg-[#3b82f6] text-white hover:bg-[#2563eb] active:scale-[0.98]',
-          variant === 'secondary' && 'bg-transparent border border-[#27272a] text-[#fafafa] hover:bg-[#1c1c1f]',
+          variant === 'primary' && 'bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white hover:brightness-110 hover:scale-105 active:scale-[0.98] shadow-lg shadow-[#667eea]/30',
+          variant === 'secondary' && 'bg-white/5 border border-white/20 text-[#fafafa] hover:bg-white/10 hover:border-[#667eea]/50 backdrop-blur-sm',
           variant === 'ghost' && 'bg-transparent text-[#a1a1aa] hover:bg-[#1c1c1f] hover:text-[#fafafa]',
           variant === 'destructive' && 'bg-[#ef4444] text-white hover:bg-red-600 active:scale-[0.98]',
           variant === 'link' && 'bg-transparent text-[#3b82f6] underline-offset-4 hover:underline',

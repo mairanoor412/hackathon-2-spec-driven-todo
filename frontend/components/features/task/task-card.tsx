@@ -58,10 +58,10 @@ function TaskCard({ task, onToggleComplete, onEdit, onDelete, className }: TaskC
     <div
       className={cn(
         'group relative',
-        'bg-[#141416] border border-[#27272a] rounded-xl',
-        'p-4 transition-all duration-200',
-        'hover:border-[#3b82f6]/50 hover:shadow-md',
-        task.completed && 'bg-[#0a0a0b] opacity-75',
+        'glass-card rounded-xl',
+        'p-4 transition-all duration-300',
+        !task.completed && 'glass-card-hover hover:shadow-[0_8px_30px_rgba(102,126,234,0.15)]',
+        task.completed && 'opacity-60',
         className
       )}
       onMouseEnter={() => setIsHovered(true)}
@@ -81,8 +81,8 @@ function TaskCard({ task, onToggleComplete, onEdit, onDelete, className }: TaskC
           <h3
             className={cn(
               'text-base font-medium text-[#fafafa]',
-              'transition-all duration-150',
-              task.completed && 'line-through text-[#71717a]'
+              'transition-all duration-200',
+              task.completed && 'line-through text-[#71717a] decoration-[#22c55e] decoration-2'
             )}
           >
             {task.title}
@@ -97,6 +97,14 @@ function TaskCard({ task, onToggleComplete, onEdit, onDelete, className }: TaskC
 
           {/* Metadata row */}
           <div className="flex flex-wrap items-center gap-2 mt-3">
+            {/* Completed indicator */}
+            {task.completed && (
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#22c55e]/20 border border-[#22c55e]/40 text-[#22c55e] text-[10px] font-medium uppercase tracking-wider">
+                <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                Done
+              </span>
+            )}
+
             {/* Priority badge */}
             {task.priority && (
               <PriorityBadge

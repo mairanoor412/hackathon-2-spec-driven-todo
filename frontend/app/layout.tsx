@@ -7,6 +7,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ToastProvider } from '@/components/ui/toast'
 import { ChatWidget } from '@/components/chat'
+import { ParticleBackground } from '@/components/ui/particle-background'
 import './globals.css'
 import '@/styles/chat.css'
 
@@ -25,7 +26,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} min-h-screen bg-[#0a0a0b] text-[#fafafa] antialiased`}>
+      <body className={`${inter.className} min-h-screen bg-[#0a0a0b] text-[#fafafa] antialiased relative`}>
+        <ParticleBackground />
         <ToastProvider>
           {children}
           <ChatWidget />
