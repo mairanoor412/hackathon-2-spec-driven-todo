@@ -423,8 +423,8 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         {[
           { value: 'all' as const, label: 'Total Tasks', count: stats.all, gradient: 'from-[#667eea] to-[#764ba2]' },
-          { value: 'active' as const, label: 'Active', count: stats.active, gradient: 'from-[#f093fb] to-[#f5576c]' },
-          { value: 'completed' as const, label: 'Completed', count: stats.completed, gradient: 'from-[#22c55e] to-[#10b981]' },
+          { value: 'active' as const, label: 'Active', count: stats.active, gradient: 'from-[#667eea] to-[#764ba2]' },
+          { value: 'completed' as const, label: 'Completed', count: stats.completed, gradient: 'from-[#667eea] to-[#764ba2]' },
         ].map((metric) => (
           <button
             key={metric.value}
