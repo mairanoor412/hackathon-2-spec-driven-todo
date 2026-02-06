@@ -1,7 +1,7 @@
 // Generated from @specs/ui/chatkit.md
 'use client'
 
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import { useSession } from '@/lib/auth-client'
 import { chatClient, ChatError } from '@/lib/chat-client'
 import { dispatchTasksChanged } from '@/lib/task-events'
@@ -130,6 +130,30 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
     setError(null)
   }, [])
 
+  // Track visual viewport height for mobile keyboard handling
+  const panelRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!isOpen) return
+    const viewport = window.visualViewport
+    if (!viewport) return
+
+    const updateHeight = () => {
+      if (panelRef.current) {
+        panelRef.current.style.height = `${viewport.height}px`
+      }
+    }
+
+    viewport.addEventListener('resize', updateHeight)
+    viewport.addEventListener('scroll', updateHeight)
+    updateHeight()
+
+    return () => {
+      viewport.removeEventListener('resize', updateHeight)
+      viewport.removeEventListener('scroll', updateHeight)
+    }
+  }, [isOpen])
+
   // Don't render if not authenticated
   if (isPending) {
     return null
@@ -141,12 +165,13 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
 
   return (
     <div
+      ref={panelRef}
       className={`
-        fixed top-0 right-0 h-screen w-full sm:w-[420px] z-40
+        fixed top-0 right-0 h-dvh w-full sm:w-[420px] z-40
         bg-[rgba(26,26,46,0.95)] backdrop-blur-[20px]
         border-l-0 sm:border-l border-white/10
         shadow-[0_0_40px_rgba(0,0,0,0.5)]
-        flex flex-col
+        flex flex-col overflow-hidden
         transition-transform duration-300 ease-out
         ${isOpen ? 'translate-x-0' : 'translate-x-full'}
       `}
