@@ -51,8 +51,9 @@ function Header({ user, notificationCount = 0, onSearch, className }: HeaderProp
     <header
       className={cn(
         'sticky top-0 z-40',
-        'bg-[#0a0a0b]/95 backdrop-blur-sm',
-        'border-b border-[#27272a]',
+        'bg-[#0a0a0b]/80 backdrop-blur-md',
+        'border-b border-white/10',
+        'shadow-lg shadow-black/20',
         className
       )}
     >
@@ -70,8 +71,8 @@ function Header({ user, notificationCount = 0, onSearch, className }: HeaderProp
             </button>
 
             {/* Logo */}
-            <Link href="/" className="flex items-center">
-              <span className="text-xl font-bold text-[#fafafa]">TODO</span>
+            <Link href="/" className="flex items-center group">
+              <span className="text-xl font-bold bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">TODO</span>
             </Link>
           </div>
 
@@ -173,16 +174,17 @@ function PublicHeader({ className }: PublicHeaderProps) {
     <header
       className={cn(
         'sticky top-0 z-40',
-        'bg-[#0a0a0b]/95 backdrop-blur-sm',
-        'border-b border-[#27272a]',
+        'bg-[#0a0a0b]/80 backdrop-blur-md',
+        'border-b border-white/10',
+        'shadow-lg shadow-black/20',
         className
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-xl font-bold text-[#fafafa]">TODO</span>
+          <Link href="/" className="flex items-center group">
+            <span className="text-xl font-bold bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">TODO</span>
           </Link>
 
           {/* Auth buttons */}

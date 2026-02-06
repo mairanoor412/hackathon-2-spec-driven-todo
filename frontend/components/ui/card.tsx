@@ -9,9 +9,9 @@ function Card({ className, hover, ...props }: CardProps) {
   return (
     <div
       className={cn(
-        'rounded-xl border border-[#27272a] bg-[#141416] p-4 md:p-5',
-        'shadow-sm transition-all duration-200',
-        hover && 'hover:border-[#3b82f6] hover:shadow-md cursor-pointer',
+        'glass-card rounded-xl p-4 md:p-5',
+        'shadow-sm transition-all duration-300',
+        hover && 'glass-card-hover cursor-pointer',
         className
       )}
       {...props}
