@@ -142,9 +142,9 @@ export function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
   return (
     <div
       className={`
-        fixed top-0 right-0 h-screen w-[420px] z-40
+        fixed top-0 right-0 h-screen w-full sm:w-[420px] z-40
         bg-[rgba(26,26,46,0.95)] backdrop-blur-[20px]
-        border-l border-white/10
+        border-l-0 sm:border-l border-white/10
         shadow-[0_0_40px_rgba(0,0,0,0.5)]
         flex flex-col
         transition-transform duration-300 ease-out

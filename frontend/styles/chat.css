@@ -119,10 +119,8 @@
 /* ===== Responsive Styles ===== */
 
 @media (max-width: 640px) {
-  /* Full-width panel on mobile */
-  .chat-panel-mobile {
-    width: 100vw;
-    border-left: none;
-    border-radius: 0;
+  /* Safe area padding for notched phones (iPhone X+) */
+  .chat-input-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 }
