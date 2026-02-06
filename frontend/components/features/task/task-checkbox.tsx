@@ -25,10 +25,10 @@ function TaskCheckbox({ checked, onChange, taskTitle, disabled, className }: Tas
         'relative flex items-center justify-center',
         'h-5 w-5 rounded-full flex-shrink-0',
         'border-2 transition-all duration-150',
-        'focus:outline-none focus:ring-2 focus:ring-[#3b82f6] focus:ring-offset-2 focus:ring-offset-[#0a0a0b]',
+        'focus:outline-none focus:ring-2 focus:ring-[#667eea] focus:ring-offset-2 focus:ring-offset-[#0a0a0b]',
         checked
           ? 'bg-[#22c55e] border-[#22c55e]'
-          : 'bg-transparent border-[#27272a] hover:border-[#3b82f6] hover:bg-[#3b82f6]/10',
+          : 'bg-transparent border-[#27272a] hover:border-[#667eea] hover:bg-[#667eea]/10',
         disabled && 'opacity-50 cursor-not-allowed',
         className
       )}

@@ -156,7 +156,7 @@ function TaskForm({ open, onClose, onSubmit, initialData, mode = 'create' }: Tas
                 'w-full rounded-md px-3 py-2 text-sm',
                 'bg-[#141416] border border-[#27272a] text-[#fafafa]',
                 'placeholder:text-[#71717a]',
-                'focus:outline-none focus:ring-2 focus:ring-[#3b82f6] focus:border-transparent',
+                'focus:outline-none focus:ring-2 focus:ring-[#667eea] focus:border-transparent',
                 'transition-colors duration-150',
                 'resize-none'
               )}

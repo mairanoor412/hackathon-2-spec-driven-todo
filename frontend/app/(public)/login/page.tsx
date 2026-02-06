@@ -146,7 +146,7 @@ function LoginForm() {
   return (
     <div className="min-h-[calc(100vh-8rem)] flex">
       {/* Left: Decorative panel (desktop only) */}
-      <div className="hidden lg:flex lg:w-2/5 bg-gradient-to-br from-[#3b82f6]/20 to-[#0a0a0b] items-center justify-center p-12">
+      <div className="hidden lg:flex lg:w-2/5 bg-gradient-to-br from-[#667eea]/20 to-[#0a0a0b] items-center justify-center p-12">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-[#fafafa] mb-4">
             Welcome back
@@ -226,7 +226,7 @@ function LoginForm() {
                 <div className="text-right">
                   <Link
                     href="/forgot-password"
-                    className="text-sm text-[#3b82f6] hover:text-[#2563eb] transition-colors"
+                    className="text-sm text-[#667eea] hover:text-[#764ba2] transition-colors"
                   >
                     Forgot password?
                   </Link>
@@ -272,7 +272,7 @@ function LoginForm() {
             Don't have an account?{' '}
             <Link
               href="/signup"
-              className="text-[#3b82f6] hover:text-[#2563eb] font-medium transition-colors"
+              className="text-[#667eea] hover:text-[#764ba2] font-medium transition-colors"
             >
               Sign up
             </Link>

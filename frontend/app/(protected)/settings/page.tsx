@@ -100,7 +100,7 @@ export default async function SettingsPage() {
                             flex items-center gap-3 px-3 py-2 rounded-lg text-sm
                             transition-colors duration-150
                             ${item.active
-                              ? 'bg-[#3b82f6]/10 text-[#3b82f6]'
+                              ? 'bg-[#667eea]/10 text-[#667eea]'
                               : item.danger
                               ? 'text-[#ef4444] hover:bg-[#ef4444]/10'
                               : 'text-[#a1a1aa] hover:bg-[#1c1c1f] hover:text-[#fafafa]'

@@ -176,7 +176,7 @@ function CompactFilterBar({
       >
         <Filter className="h-4 w-4" />
         {activeFilterCount > 0 && (
-          <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-[#3b82f6] text-[10px] text-white flex items-center justify-center">
+          <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-[#667eea] text-[10px] text-white flex items-center justify-center">
             {activeFilterCount}
           </span>
         )}

@@ -12,15 +12,15 @@
   --foreground-secondary: #a1a1aa;
   --foreground-muted: #71717a;
 
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
+  --accent: #667eea;
+  --accent-hover: #764ba2;
   --accent-success: #22c55e;
   --accent-warning: #f59e0b;
   --accent-danger: #ef4444;
 
   --border: #27272a;
   --border-subtle: #1f1f22;
-  --border-focus: #3b82f6;
+  --border-focus: #667eea;
 
   /* Premium gradient colors */
   --gradient-start: #667eea;

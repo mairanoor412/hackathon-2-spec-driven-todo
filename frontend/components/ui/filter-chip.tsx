@@ -29,7 +29,7 @@ function FilterChip({ label, onRemove, className }: FilterChipProps) {
           'text-[#71717a] hover:text-[#ef4444]',
           'hover:bg-[#ef4444]/10',
           'transition-colors duration-150',
-          'focus:outline-none focus:ring-2 focus:ring-[#3b82f6]'
+          'focus:outline-none focus:ring-2 focus:ring-[#667eea]'
         )}
         aria-label={`Remove ${label} filter`}
       >
@@ -63,7 +63,7 @@ function FilterChipGroup({ filters, onRemove, onClearAll, className }: FilterChi
         <button
           onClick={onClearAll}
           className={cn(
-            'text-xs text-[#3b82f6] hover:text-[#2563eb]',
+            'text-xs text-[#667eea] hover:text-[#764ba2]',
             'transition-colors duration-150',
             'focus:outline-none focus:underline'
           )}

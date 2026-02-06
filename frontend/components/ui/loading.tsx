@@ -16,7 +16,7 @@ function Spinner({ size = 'md', className }: SpinnerProps) {
   return (
     <svg
       className={cn(
-        'animate-spin text-[#3b82f6]',
+        'animate-spin text-[#667eea]',
         sizeClasses[size],
         className
       )}
