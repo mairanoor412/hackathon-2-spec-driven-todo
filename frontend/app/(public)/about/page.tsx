@@ -39,7 +39,7 @@ export default function AboutPage() {
           <h1 className="text-4xl sm:text-5xl font-bold text-[#fafafa] mb-4">
             About Todo App
           </h1>
-          <p className="text-xl text-[#3b82f6] font-medium mb-4">
+          <p className="text-xl text-[#667eea] font-medium mb-4">
             Hackathon II - Evolution of Todo
           </p>
           <p className="text-lg text-[#a1a1aa]">
@@ -89,7 +89,7 @@ export default function AboutPage() {
                     className={`
                       relative z-10 w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold
                       ${phase.status === 'complete' ? 'bg-[#22c55e] text-white' : ''}
-                      ${phase.status === 'current' ? 'bg-[#3b82f6] text-white ring-4 ring-[#3b82f6]/30' : ''}
+                      ${phase.status === 'current' ? 'bg-[#667eea] text-white ring-4 ring-[#667eea]/30' : ''}
                       ${phase.status === 'upcoming' ? 'bg-[#27272a] text-[#71717a]' : ''}
                     `}
                   >
@@ -102,7 +102,7 @@ export default function AboutPage() {
                     {phase.description}
                   </p>
                   {phase.status === 'current' && (
-                    <span className="mt-2 text-xs text-[#3b82f6] font-medium">
+                    <span className="mt-2 text-xs text-[#667eea] font-medium">
                       Current
                     </span>
                   )}

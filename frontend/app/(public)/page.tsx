@@ -52,7 +52,7 @@ export default function LandingPage() {
             <div className="space-y-8">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#fafafa] leading-tight">
                 Organize your life,{' '}
-                <span className="text-[#3b82f6]">one task at a time.</span>
+                <span className="text-[#667eea]">one task at a time.</span>
               </h1>
               <p className="text-lg sm:text-xl text-[#a1a1aa] max-w-lg">
                 A beautiful, minimalist todo app that helps you focus on what matters most.
@@ -76,7 +76,7 @@ export default function LandingPage() {
             <div className="relative">
               <DemoTaskPreview />
               {/* Decorative gradient */}
-              <div className="absolute -inset-4 -z-10 bg-gradient-to-br from-[#3b82f6]/20 to-transparent rounded-3xl blur-3xl" />
+              <div className="absolute -inset-4 -z-10 bg-gradient-to-br from-[#667eea]/20 to-transparent rounded-3xl blur-3xl" />
             </div>
           </div>
         </div>
@@ -100,10 +100,10 @@ export default function LandingPage() {
               return (
                 <div
                   key={feature.title}
-                  className="p-6 bg-[#141416] border border-[#27272a] rounded-xl hover:border-[#3b82f6]/50 transition-colors"
+                  className="p-6 bg-[#141416] border border-[#27272a] rounded-xl hover:border-[#667eea]/50 transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-[#3b82f6]/10 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-[#3b82f6]" />
+                  <div className="w-12 h-12 rounded-lg bg-[#667eea]/10 flex items-center justify-center mb-4">
+                    <Icon className="h-6 w-6 text-[#667eea]" />
                   </div>
                   <h3 className="text-lg font-semibold text-[#fafafa] mb-2">
                     {feature.title}

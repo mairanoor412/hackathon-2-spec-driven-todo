@@ -28,12 +28,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             'flex h-10 w-full rounded-md border bg-[#141416] px-3 py-2 text-sm',
             'text-[#fafafa] placeholder:text-[#71717a]',
             'transition-colors duration-150',
-            'focus:outline-none focus:ring-2 focus:ring-[#3b82f6] focus:border-transparent',
+            'focus:outline-none focus:ring-2 focus:ring-[#667eea] focus:border-transparent',
             'disabled:cursor-not-allowed disabled:opacity-50',
             hasIcon && 'pl-10',
             error
               ? 'border-[#ef4444] focus:ring-[#ef4444]'
-              : 'border-[#27272a] focus:border-[#3b82f6]',
+              : 'border-[#27272a] focus:border-[#667eea]',
             className
           )}
           ref={ref}

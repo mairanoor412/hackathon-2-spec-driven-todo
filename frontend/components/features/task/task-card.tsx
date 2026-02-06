@@ -164,7 +164,7 @@ function TaskCard({ task, onToggleComplete, onEdit, onDelete, className }: TaskC
                   'text-[#71717a] hover:text-[#fafafa]',
                   'hover:bg-[#1c1c1f]',
                   'transition-colors duration-150',
-                  'focus:outline-none focus:ring-2 focus:ring-[#3b82f6]'
+                  'focus:outline-none focus:ring-2 focus:ring-[#667eea]'
                 )}
                 aria-label="Task actions"
               >

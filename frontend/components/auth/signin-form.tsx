@@ -76,7 +76,7 @@ export function SigninForm() {
             type="email"
             required
             autoComplete="email"
-            className="w-full px-4 py-2.5 rounded-lg bg-[#141416] border border-[#27272a] text-[#fafafa] placeholder-[#71717a] focus:outline-none focus:ring-2 focus:ring-[#3b82f6] focus:border-transparent transition-all"
+            className="w-full px-4 py-2.5 rounded-lg bg-[#141416] border border-[#27272a] text-[#fafafa] placeholder-[#71717a] focus:outline-none focus:ring-2 focus:ring-[#667eea] focus:border-transparent transition-all"
             placeholder="you@example.com"
           />
         </div>
@@ -91,7 +91,7 @@ export function SigninForm() {
             type="password"
             required
             autoComplete="current-password"
-            className="w-full px-4 py-2.5 rounded-lg bg-[#141416] border border-[#27272a] text-[#fafafa] placeholder-[#71717a] focus:outline-none focus:ring-2 focus:ring-[#3b82f6] focus:border-transparent transition-all"
+            className="w-full px-4 py-2.5 rounded-lg bg-[#141416] border border-[#27272a] text-[#fafafa] placeholder-[#71717a] focus:outline-none focus:ring-2 focus:ring-[#667eea] focus:border-transparent transition-all"
             placeholder="Enter your password"
           />
         </div>
@@ -99,7 +99,7 @@ export function SigninForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-2.5 px-4 rounded-lg bg-[#3b82f6] text-white font-medium hover:bg-[#2563eb] focus:outline-none focus:ring-2 focus:ring-[#3b82f6] focus:ring-offset-2 focus:ring-offset-[#0a0a0b] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="w-full py-2.5 px-4 rounded-lg bg-[#667eea] text-white font-medium hover:bg-[#764ba2] focus:outline-none focus:ring-2 focus:ring-[#667eea] focus:ring-offset-2 focus:ring-offset-[#0a0a0b] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           {loading ? 'Signing in...' : 'Sign In'}
         </button>
@@ -109,7 +109,7 @@ export function SigninForm() {
         Don&apos;t have an account?{' '}
         <Link
           href="/signup"
-          className="text-[#3b82f6] hover:text-[#2563eb] font-medium transition-colors"
+          className="text-[#667eea] hover:text-[#764ba2] font-medium transition-colors"
         >
           Create account
         </Link>

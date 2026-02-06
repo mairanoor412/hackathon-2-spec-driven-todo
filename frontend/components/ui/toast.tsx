@@ -121,7 +121,7 @@ function ToastItem({ toast, onClose }: { toast: Toast; onClose: () => void }) {
           'p-1 rounded-md flex-shrink-0',
           'text-[#71717a] hover:text-[#fafafa] hover:bg-[#1c1c1f]',
           'transition-colors duration-150',
-          'focus:outline-none focus:ring-2 focus:ring-[#3b82f6]'
+          'focus:outline-none focus:ring-2 focus:ring-[#667eea]'
         )}
         aria-label="Dismiss notification"
       >

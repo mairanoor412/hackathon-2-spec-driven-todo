@@ -46,9 +46,9 @@ const Select = forwardRef<HTMLDivElement, SelectProps>(
             'flex h-10 w-full items-center justify-between rounded-md',
             'border border-[#27272a] bg-[#141416] px-3 py-2 text-sm',
             'text-[#fafafa] transition-colors duration-150',
-            'focus:outline-none focus:ring-2 focus:ring-[#3b82f6] focus:border-transparent',
+            'focus:outline-none focus:ring-2 focus:ring-[#667eea] focus:border-transparent',
             'disabled:cursor-not-allowed disabled:opacity-50',
-            open && 'ring-2 ring-[#3b82f6] border-transparent'
+            open && 'ring-2 ring-[#667eea] border-transparent'
           )}
         >
           <span className={selectedOption ? 'text-[#fafafa]' : 'text-[#71717a]'}>
@@ -84,7 +84,7 @@ const Select = forwardRef<HTMLDivElement, SelectProps>(
                   'flex items-center justify-between',
                   'transition-colors duration-150',
                   'hover:bg-[#1c1c1f]',
-                  option.value === value && 'bg-[#3b82f6]/10 text-[#3b82f6]'
+                  option.value === value && 'bg-[#667eea]/10 text-[#667eea]'
                 )}
               >
                 {option.label}

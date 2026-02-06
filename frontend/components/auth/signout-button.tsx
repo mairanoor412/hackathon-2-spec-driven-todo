@@ -46,7 +46,7 @@ export function SignoutButton({
       disabled={loading}
       className={cn(
         'flex items-center gap-2 rounded-md transition-all',
-        'focus:outline-none focus:ring-2 focus:ring-[#3b82f6] focus:ring-offset-2 focus:ring-offset-[#0a0a0b]',
+        'focus:outline-none focus:ring-2 focus:ring-[#667eea] focus:ring-offset-2 focus:ring-offset-[#0a0a0b]',
         'disabled:opacity-50 disabled:cursor-not-allowed',
         variant === 'primary' && 'px-4 py-2 bg-[#ef4444] text-white hover:bg-[#dc2626]',
         variant === 'ghost' && 'px-4 py-2 bg-[#1c1c1f] text-[#a1a1aa] hover:bg-[#232326] hover:text-[#fafafa]',

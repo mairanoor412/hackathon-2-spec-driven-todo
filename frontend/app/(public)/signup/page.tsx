@@ -284,11 +284,11 @@ export default function SignupPage() {
           {/* Terms */}
           <p className="text-xs text-center text-[#71717a]">
             By signing up, you agree to our{' '}
-            <Link href="/terms" className="text-[#3b82f6] hover:underline">
+            <Link href="/terms" className="text-[#667eea] hover:underline">
               Terms of Service
             </Link>{' '}
             and{' '}
-            <Link href="/privacy" className="text-[#3b82f6] hover:underline">
+            <Link href="/privacy" className="text-[#667eea] hover:underline">
               Privacy Policy
             </Link>
             .
@@ -299,7 +299,7 @@ export default function SignupPage() {
             Already have an account?{' '}
             <Link
               href="/login"
-              className="text-[#3b82f6] hover:text-[#2563eb] font-medium transition-colors"
+              className="text-[#667eea] hover:text-[#764ba2] font-medium transition-colors"
             >
               Sign in
             </Link>

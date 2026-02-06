@@ -42,7 +42,7 @@ function UserMenu({ user, onSettings, onStats, onSignOut, className }: UserMenuP
           alt={user.name || user.email}
           fallback={initials}
           size="sm"
-          className="cursor-pointer hover:ring-2 hover:ring-[#3b82f6]/50 transition-all duration-150"
+          className="cursor-pointer hover:ring-2 hover:ring-[#667eea]/50 transition-all duration-150"
         />
       }
       align="right"
