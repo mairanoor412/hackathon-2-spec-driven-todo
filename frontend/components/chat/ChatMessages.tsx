@@ -31,7 +31,7 @@ export function ChatMessages({ messages, isTyping }: ChatMessagesProps) {
   }
 
   return (
-    <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+    <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
       {messages.map((message) => (
         <div
           key={message.id}
@@ -52,7 +52,7 @@ export function ChatMessages({ messages, isTyping }: ChatMessagesProps) {
 
           {/* Message bubble */}
           <div
-            className={`max-w-[80%] ${
+            className={`max-w-[88%] sm:max-w-[80%] ${
               message.role === 'user' ? 'items-end' : 'items-start'
             }`}
           >

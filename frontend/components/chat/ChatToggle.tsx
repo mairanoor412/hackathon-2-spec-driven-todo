@@ -22,8 +22,8 @@ export function ChatToggle({ isOpen, onClick }: ChatToggleProps) {
     <button
       onClick={onClick}
       className={`
-        fixed bottom-6 right-6 z-50
-        w-14 h-14 rounded-full
+        fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50
+        w-12 h-12 sm:w-14 sm:h-14 rounded-full
         bg-gradient-to-br from-[#667eea] to-[#764ba2]
         flex items-center justify-center
         shadow-lg shadow-[#667eea]/40

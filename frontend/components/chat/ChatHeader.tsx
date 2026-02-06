@@ -12,7 +12,7 @@ interface ChatHeaderProps {
  */
 export function ChatHeader({ onClose }: ChatHeaderProps) {
   return (
-    <header className="h-[72px] px-4 flex items-center justify-between bg-gradient-to-b from-[rgba(102,126,234,0.1)] to-transparent border-b border-white/10">
+    <header className="h-[60px] sm:h-[72px] px-3 sm:px-4 flex items-center justify-between bg-gradient-to-b from-[rgba(102,126,234,0.1)] to-transparent border-b border-white/10">
       <div className="flex items-center gap-3">
         {/* Avatar with glow effect */}
         <div className="relative">
