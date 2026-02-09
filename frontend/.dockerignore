@@ -1,0 +1,14 @@
+# Generated from @specs/k8s-infrastructure/Dockerization.md
+node_modules/
+.next/
+.env
+.env.*
+!.env.example
+.git/
+.gitignore
+*.md
+Dockerfile
+.dockerignore
+coverage/
+.vercel/
+.turbo/

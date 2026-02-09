@@ -8,9 +8,9 @@ A Todo application that evolves through 5 phases—from a simple Python CLI to a
 
 ## Current Phase
 
-**Phase 3: chatbot
+**Phase 4:  Local Kubernetes Deployment
 
-Building the foundation with core task management via CLI. All features implemented through `/sp.specify` → `/sp.plan` → `/sp.implement` workflow.
+Building the foundation with core task management via CLI. All features implemented through `/sp.specify` → `/sp.plan` →  `/sp.tasks` → `/sp.implement` workflow.
 
 ## Tech Stack
 
@@ -25,11 +25,11 @@ Building the foundation with core task management via CLI. All features implemen
 - **Database**: Neon PostgreSQL
 - **Auth**: Better Auth + JWT
 
-### Phase 3 (inprogress)
+### Phase 3 (completed)
 - **AI**: OpenAI Agents SDK, ChatKit
 - **Integration**: Official MCP SDK
 
-### Phase 4 (Planned)
+### Phase 4 (inprogress)
 - **Containerization**: Docker
 - **Orchestration**: Minikube, Helm Charts
 - **AI Ops**: kubectl-ai/kagent
@@ -102,8 +102,8 @@ todo-app/
 |-------|--------|---------------|
 | Phase 1 | completed | CLI with full CRUD |
 | Phase 2 | completed | Web app with auth |
-| Phase 3 | In Progress | AI chatbot integration |
-| Phase 4 | Planned | Local K8s deployment |
+| Phase 3 | completed | AI chatbot integration |
+| Phase 4 | in progress | Local K8s deployment |
 | Phase 5 | Planned | Cloud-native with Dapr |
 
 ---

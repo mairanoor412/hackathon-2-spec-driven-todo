@@ -1,0 +1,15 @@
+# Generated from @specs/k8s-infrastructure/Helm-charts.md
+apiVersion: v2
+name: todo-app
+description: Todo AI Chatbot - Phase 4 Local Kubernetes Deployment
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+maintainers:
+  - name: Panaversity Hackathon Team
+keywords:
+  - todo
+  - chatbot
+  - fastapi
+  - nextjs
+  - ai

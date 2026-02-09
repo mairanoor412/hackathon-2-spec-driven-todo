@@ -1,0 +1,12 @@
+# Generated from @specs/k8s-infrastructure/Helm-charts.md
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "todo-app.fullname" . }}-config
+  labels:
+    {{- include "todo-app.labels" . | nindent 4 }}
+data:
+  CORS_ORIGINS: {{ .Values.config.corsOrigins | quote }}
+  BETTER_AUTH_URL: {{ .Values.config.betterAuthUrl | quote }}
+  NEXT_PUBLIC_API_URL: {{ .Values.config.nextPublicApiUrl | quote }}
+  NEXT_PUBLIC_BETTER_AUTH_URL: {{ .Values.config.nextPublicBetterAuthUrl | quote }}
