@@ -1,0 +1,7 @@
+# Generated from @specs/k8s-infrastructure/Helm-charts.md
+.git
+.gitignore
+.DS_Store
+*.md
+*.txt.bak
+tests/

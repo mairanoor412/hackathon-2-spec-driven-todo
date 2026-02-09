@@ -2,7 +2,7 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  // Enable experimental features if needed
+  output: 'standalone',
   experimental: {
     // Server actions are stable in Next.js 15+
   },

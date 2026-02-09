@@ -10,6 +10,7 @@ structure:
   api_dir: specs/api
   database_dir: specs/database
   ui_dir: specs/ui
+  k8s_dir: specs/k8s-infrastructure
 
 phases:
   - name: phase1-console-todo-app
@@ -33,13 +34,13 @@ phases:
       - authentication
       - chatbot
 
-  - name: phase4-k8s
+  - name: phase4-Local-kubernetes-deployment
     features:
       - task-crud
       - task-priorities-search-sorting
       - task-recurring-Due-Dates-and-reminders
       - authentication
-      - deployment
+      - Local-kubernetes-deployment
 
   - name: phase5-cloud
     features:

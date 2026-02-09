@@ -1,0 +1,39 @@
+{{/* Generated from @specs/k8s-infrastructure/Helm-charts.md */}}
+=============================================================
+  Todo AI Chatbot - Phase 4 Local Kubernetes Deployment
+=============================================================
+
+Your application has been deployed!
+
+{{- if eq .Values.frontend.service.type "NodePort" }}
+
+Frontend (Web UI):
+  export MINIKUBE_IP=$(minikube ip)
+  echo "http://$MINIKUBE_IP:{{ .Values.frontend.service.nodePort }}"
+
+Backend (API):
+  echo "http://$MINIKUBE_IP:{{ .Values.backend.service.nodePort }}"
+  echo "Health: http://$MINIKUBE_IP:{{ .Values.backend.service.nodePort }}/health"
+  echo "Docs:   http://$MINIKUBE_IP:{{ .Values.backend.service.nodePort }}/docs"
+
+Or use minikube service:
+  minikube service {{ include "todo-app.fullname" . }}-frontend -n {{ .Values.namespace }}
+  minikube service {{ include "todo-app.fullname" . }}-backend -n {{ .Values.namespace }}
+{{- end }}
+
+Useful commands:
+
+  # Check pod status
+  kubectl get pods -n {{ .Values.namespace }}
+
+  # View logs
+  kubectl logs -l app.kubernetes.io/component=backend -n {{ .Values.namespace }}
+  kubectl logs -l app.kubernetes.io/component=frontend -n {{ .Values.namespace }}
+
+  # Upgrade release
+  helm upgrade {{ .Release.Name }} ./k8s/todo-app -n {{ .Values.namespace }}
+
+  # Uninstall
+  helm uninstall {{ .Release.Name }} -n {{ .Values.namespace }}
+
+=============================================================

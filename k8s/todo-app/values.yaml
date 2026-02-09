@@ -1,0 +1,163 @@
+# Generated from @specs/k8s-infrastructure/Helm-charts.md
+# Default values for todo-app Helm chart.
+
+# -- Global settings
+nameOverride: ""
+fullnameOverride: ""
+namespace: todo-app
+
+# =============================================================================
+# Backend Configuration
+# =============================================================================
+backend:
+  # -- Number of backend pod replicas
+  replicaCount: 1
+
+  image:
+    # -- Backend container image repository
+    repository: todo-backend
+    # -- Backend image tag
+    tag: latest
+    # -- Image pull policy (IfNotPresent for local Minikube images)
+    pullPolicy: IfNotPresent
+
+  service:
+    # -- Backend service type (NodePort for Minikube access)
+    type: NodePort
+    # -- Backend container port
+    port: 8000
+    # -- Backend NodePort (30000-32767 range)
+    nodePort: 30800
+
+  resources:
+    requests:
+      # -- Backend CPU request
+      cpu: 100m
+      # -- Backend memory request
+      memory: 256Mi
+    limits:
+      # -- Backend CPU limit
+      cpu: 500m
+      # -- Backend memory limit (<512MB per Constitution IX)
+      memory: 512Mi
+
+  # -- Backend liveness probe configuration
+  livenessProbe:
+    httpGet:
+      path: /health
+      port: 8000
+    initialDelaySeconds: 15
+    periodSeconds: 30
+    timeoutSeconds: 5
+    failureThreshold: 3
+
+  # -- Backend readiness probe configuration
+  readinessProbe:
+    httpGet:
+      path: /health
+      port: 8000
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 3
+
+# =============================================================================
+# Frontend Configuration
+# =============================================================================
+frontend:
+  # -- Number of frontend pod replicas
+  replicaCount: 1
+
+  image:
+    # -- Frontend container image repository
+    repository: todo-frontend
+    # -- Frontend image tag
+    tag: latest
+    # -- Image pull policy (IfNotPresent for local Minikube images)
+    pullPolicy: IfNotPresent
+
+  service:
+    # -- Frontend service type (NodePort for browser access)
+    type: NodePort
+    # -- Frontend container port
+    port: 3000
+    # -- Frontend NodePort (30000-32767 range)
+    nodePort: 30300
+
+  resources:
+    requests:
+      # -- Frontend CPU request
+      cpu: 100m
+      # -- Frontend memory request
+      memory: 256Mi
+    limits:
+      # -- Frontend CPU limit
+      cpu: 500m
+      # -- Frontend memory limit (<512MB per Constitution IX)
+      memory: 512Mi
+
+  # -- Frontend liveness probe configuration
+  livenessProbe:
+    httpGet:
+      path: /
+      port: 3000
+    initialDelaySeconds: 20
+    periodSeconds: 30
+    timeoutSeconds: 5
+    failureThreshold: 3
+
+  # -- Frontend readiness probe configuration
+  readinessProbe:
+    httpGet:
+      path: /
+      port: 3000
+    initialDelaySeconds: 15
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 3
+
+# =============================================================================
+# Environment Variables (non-sensitive → ConfigMap)
+# =============================================================================
+config:
+  # -- CORS allowed origins
+  corsOrigins: "http://localhost:3000"
+  # -- Better Auth URL for JWKS endpoint
+  betterAuthUrl: "http://localhost:3000"
+  # -- Public API URL for frontend
+  nextPublicApiUrl: "http://localhost:8000"
+  # -- Public Better Auth URL for frontend client
+  nextPublicBetterAuthUrl: "http://localhost:3000"
+
+# =============================================================================
+# Secrets (sensitive → Kubernetes Secret)
+# Override at install: --set secrets.databaseUrl="..." or -f secrets.yaml
+# =============================================================================
+secrets:
+  # -- Neon PostgreSQL connection string
+  databaseUrl: "CHANGE_ME"
+  # -- Better Auth shared JWT secret
+  betterAuthSecret: "CHANGE_ME"
+  # -- Google Gemini API key for AI chatbot
+  geminiApiKey: "CHANGE_ME"
+
+# =============================================================================
+# Ingress (optional, disabled by default)
+# =============================================================================
+ingress:
+  # -- Enable Ingress resource
+  enabled: false
+  # -- Ingress class name
+  className: nginx
+  hosts:
+    - host: todo.local
+      paths:
+        - path: /
+          pathType: Prefix
+          service: frontend
+        - path: /api
+          pathType: Prefix
+          service: backend
+        - path: /health
+          pathType: Prefix
+          service: backend
