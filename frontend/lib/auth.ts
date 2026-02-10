@@ -30,12 +30,32 @@ function getServerBetterAuthURL(): string {
   return 'http://localhost:3000'
 }
 
+// Build trusted origins list for CORS/origin validation
+function getTrustedOrigins(): string[] {
+  const origins: string[] = ['http://localhost:3000']
+  if (process.env.BETTER_AUTH_URL && process.env.BETTER_AUTH_URL !== 'http://localhost:3000') {
+    origins.push(process.env.BETTER_AUTH_URL)
+  }
+  if (process.env.NEXT_PUBLIC_BETTER_AUTH_URL && !origins.includes(process.env.NEXT_PUBLIC_BETTER_AUTH_URL)) {
+    origins.push(process.env.NEXT_PUBLIC_BETTER_AUTH_URL)
+  }
+  // Trust any additional origins (comma-separated) for dev environments (e.g. WSL IPs)
+  if (process.env.TRUSTED_ORIGINS) {
+    for (const o of process.env.TRUSTED_ORIGINS.split(',')) {
+      const trimmed = o.trim()
+      if (trimmed && !origins.includes(trimmed)) origins.push(trimmed)
+    }
+  }
+  return origins
+}
+
 export const auth = betterAuth({
   // PostgreSQL database adapter using pg Pool
   database: pool,
 
   secret: process.env.BETTER_AUTH_SECRET,
   baseURL: getServerBetterAuthURL(),
+  trustedOrigins: getTrustedOrigins(),
 
   // Email/password authentication
   emailAndPassword: {
